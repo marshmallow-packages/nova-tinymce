@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Marshmallow\\Nova\\TinyMCE": "src/"
+            "Marshmallow\\Nova\\TinyMCE\\": "src/"
         }
     },
     "extra": {
