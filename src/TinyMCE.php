@@ -51,6 +51,9 @@ class TinyMCE extends Field
             'use_lfm' => config('nova-tinymce.use_lfm'),
             'lfm_url' => config('nova-tinymce.lfm_url'),
             'height' => config('nova-tinymce.height'),
+            'link_class_list' => [
+                ['title' => 'Button (primary - soft)', 'value' => 'btn btn-soft-primary btn-wide transition-3d-hover']
+            ],
             'style_formats' => [
                 [
                     'title' => env('APP_NAME'),
@@ -61,7 +64,7 @@ class TinyMCE extends Field
                             'classes' => 'lead'
                         ]
                     ]
-                ]
+                ],
             ],
             'style_formats_merge' => true,
         ];

@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'height' => 800,
+    'height' => 350,
     'content_css' => '/vendor/tinymce/skins/ui/oxide/content.min.css',
     'skin_url' => '/vendor/tinymce/skins/ui/oxide',
     'path_absolute' => '/',
@@ -31,11 +31,6 @@ return [
         // 'codesample', 'bbcode', 'autosave', 'autoresize',
         // 'spellchecker', 'help',
     ],
-
-  //   image_list: [
-  //   {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
-  //   {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
-  // ]
 
     'toolbar' => 'undo redo | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
     'relative_urls' => false,
