@@ -27,7 +27,7 @@ class TinyMCE extends Field
         ]);
     }
 
-    public function height ($height)
+    public function height($height)
     {
         $currentOptions = $this->meta['options'];
         $currentOptions['height'] = $height;
@@ -39,7 +39,7 @@ class TinyMCE extends Field
         return $this;
     }
 
-    protected function buildOptionsArray ()
+    protected function buildOptionsArray()
     {
         return [
             'content_css' => config('nova-tinymce.content_css'),
@@ -52,6 +52,7 @@ class TinyMCE extends Field
             'lfm_url' => config('nova-tinymce.lfm_url'),
             'height' => config('nova-tinymce.height'),
             'link_class_list' => [
+                ['title' => 'No class', 'value' => ''],
                 ['title' => 'Button (primary - soft)', 'value' => 'btn btn-soft-primary btn-wide transition-3d-hover']
             ],
             'style_formats' => [
@@ -113,13 +114,13 @@ class TinyMCE extends Field
         ]);
     }
 
-    public function addStyle (array $style)
+    public function addStyle(array $style)
     {
         $this->meta['options']['style_formats'][(count($this->meta['options']['style_formats']) - 1)]['items'][] = $style;
         return $this;
     }
 
-    public function addStyles (array $styles)
+    public function addStyles(array $styles)
     {
         foreach ($styles as $style) {
             $this->addStyle($style);
