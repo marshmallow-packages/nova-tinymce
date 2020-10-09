@@ -2,9 +2,9 @@
 
 namespace Marshmallow\Nova\TinyMCE;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 use Marshmallow\Nova\TinyMCE\Console\SupportFileManagerCommand;
 
 class FieldServiceProvider extends ServiceProvider
@@ -32,7 +32,7 @@ class FieldServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                SupportFileManagerCommand::class
+                SupportFileManagerCommand::class,
             ]);
         }
     }
