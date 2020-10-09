@@ -11,7 +11,7 @@ jobs:
       - name: Checkout v2
         uses: actions/checkout@v2
 
-      - name: PHP Syntax Checker (Last test)
+      - name: Check PHP syntax errors
         uses: overtrue/phplint@master
 
       - name: PHP-CS-Fixer
