@@ -8,15 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: PHP Linter
-        uses: overtrue/phplint@master
+      - name: PHP Syntax Checker (Lint)
+        uses: StephaneBour/actions-php-lint@7.4
         with:
-          path: .
-          options: --exclude=*.log
-      
+          dir: './src'
+
       - name: Checkout v2
         uses: actions/checkout@v2
-        
+
       - name: PHP-CS-Fixer
         uses: docker://oskarstark/php-cs-fixer-ga
         with:
