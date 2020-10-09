@@ -11,9 +11,6 @@ jobs:
       - name: Checkout v2
         uses: actions/checkout@v2
 
-      - name: Check PHP syntax errors
-        uses: overtrue/phplint@2.1.0
-
       - name: PHP Syntax Checker (Lint)
         uses: StephaneBour/actions-php-lint@7.4
 
