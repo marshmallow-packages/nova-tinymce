@@ -11,8 +11,8 @@ jobs:
       - name: Checkout v2
         uses: actions/checkout@v2
 
-      - name: PHP Syntax Checker (Lint)
-        uses: StephaneBour/actions-php-lint@7.4
+      - name: PHP Syntax Checker (Last test)
+        uses: overtrue/phplint@master
 
       - name: PHP-CS-Fixer
         uses: docker://oskarstark/php-cs-fixer-ga
