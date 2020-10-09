@@ -51,10 +51,12 @@ class TinyMCE extends Field
             'use_lfm' => config('nova-tinymce.use_lfm'),
             'lfm_url' => config('nova-tinymce.lfm_url'),
             'height' => config('nova-tinymce.height'),
-            'link_class_list' => [
-                ['title' => 'No class', 'value' => ''],
-                ['title' => 'Button (primary - soft)', 'value' => 'btn btn-soft-primary btn-wide transition-3d-hover']
-            ],
+            'table_header_type' => config('nova-tinymce.table_header_type'),
+            'link_class_list' => config('nova-tinymce.link_class_list'),
+            'table_class_list' => config('nova-tinymce.table_class_list'),
+            'table_cell_class_list' => config('nova-tinymce.table_cell_class_list'),
+            'table_row_class_list' => config('nova-tinymce.table_row_class_list'),
+            'image_class_list' => config('nova-tinymce.image_class_list'),
             'style_formats' => [
                 [
                     'title' => env('APP_NAME'),
