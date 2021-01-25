@@ -47,13 +47,13 @@ return [
     'table_class_list' => [
         ['title' => 'Default', 'value' => ''],
     ],
-    'table_cell_class_list': [
+    'table_cell_class_list' => [
         ['title' => 'Default', 'value' => ''],
     ],
-    'table_row_class_list':  [
+    'table_row_class_list' => [
         ['title' => 'Default', 'value' => ''],
     ],
-    'image_class_list': [
+    'image_class_list' => [
         ['title' => 'Default', 'value' => ''],
     ],
 ];

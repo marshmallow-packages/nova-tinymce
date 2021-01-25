@@ -30,6 +30,11 @@ export default {
         options() {
             let options = this.field.options
 
+            this.darkThemeOn = localStorage.darkThemeOn === "true";
+            if (localStorage.darkThemeOn === "true") {
+                options['skin_url'] = '/vendor/tinymce/skins/ui/oxide-dark';
+            }
+
             if (options.use_lfm) {
                 options['file_picker_callback'] = this.filePicker
             }
