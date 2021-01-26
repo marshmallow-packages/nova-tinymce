@@ -4,6 +4,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Custom items
+    |--------------------------------------------------------------------------
+    |
+    | Here you can define the custom styling items that will be available in
+    | the TinyMCE "Content type" selector.
+    |
+    */
+   'custom_items' => [
+        [
+            'title' => 'Lead Paragraph',
+            'block' => 'p',
+            'classes' => 'lead',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Default Options
     |--------------------------------------------------------------------------
     |
@@ -11,7 +28,6 @@ return [
     | fields by default.
     |
     */
-
     'height' => 350,
     'content_css' => '/vendor/tinymce/skins/ui/oxide/content.min.css',
     'skin_url' => '/vendor/tinymce/skins/ui/oxide',
@@ -38,12 +54,12 @@ return [
     'use_lfm' => false,
     'table_header_type' => 'sectionCells',
     'link_class_list' => [
-                ['title' => 'Default', 'value' => ''],
-                ['title' => 'Button Primary', 'value' => 'btn btn-primary btn-wide'],
-                ['title' => 'Button Primary (Outline)', 'value' => 'btn btn-primary-outline btn-wide'],
-                ['title' => 'Button Secondary', 'value' => 'btn btn-secondary btn-wide'],
-                ['title' => 'Button Secondary (Outline)', 'value' => 'btn btn-secondary-outline btn-wide'],
-            ],
+        ['title' => 'Default', 'value' => ''],
+        ['title' => 'Button Primary', 'value' => 'btn btn-primary btn-wide'],
+        ['title' => 'Button Primary (Outline)', 'value' => 'btn btn-primary-outline btn-wide'],
+        ['title' => 'Button Secondary', 'value' => 'btn btn-secondary btn-wide'],
+        ['title' => 'Button Secondary (Outline)', 'value' => 'btn btn-secondary-outline btn-wide'],
+    ],
     'table_class_list' => [
         ['title' => 'Default', 'value' => ''],
     ],

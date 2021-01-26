@@ -41,7 +41,7 @@ class TinyMCE extends Field
 
     protected function buildOptionsArray()
     {
-        return [
+        $options = [
             'content_css' => config('nova-tinymce.content_css'),
             'skin_url' => config('nova-tinymce.skin_url'),
             'path_absolute' => config('nova-tinymce.path_absolute'),
@@ -57,20 +57,20 @@ class TinyMCE extends Field
             'table_cell_class_list' => config('nova-tinymce.table_cell_class_list'),
             'table_row_class_list' => config('nova-tinymce.table_row_class_list'),
             'image_class_list' => config('nova-tinymce.image_class_list'),
-            'style_formats' => [
-                [
-                    'title' => env('APP_NAME'),
-                    'items' => [
-                        [
-                            'title' => 'Lead Paragraph',
-                            'block' => 'p',
-                            'classes' => 'lead',
-                        ],
-                    ],
-                ],
-            ],
+
             'style_formats_merge' => true,
         ];
+
+        if ($custom_items = config('nova-tinymce.custom_items')) {
+            $options['style_formats'] = [
+                [
+                    'title' => config('app.name'),
+                    'items' => config('nova-tinymce.custom_items'),
+                ],
+            ];
+        }
+
+        return $options;
     }
 
     /**
