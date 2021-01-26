@@ -1,51 +1,82 @@
+![alt text](https://marshmallow.dev/cdn/media/logo-red-237x46.png "marshmallow.")
+
 # Laravel Nova TinyMCE editor
+This Nova package allows you to use [TinyMCE editor](https://tiny.cloud) for text areas. You can customize the editor options.
 
-This Nova package allow you to use [TinyMCE editor](https://tiny.cloud) for text areas. You can customize the editor options.
-
-## Installation
-
-```shell
+## Composer
+You can install the package via composer:
+```bash
 composer require marshmallow/nova-tinymce
 ```
+
+## Installation
 Run the command bellow, to publish TinyMCE JavaScript and CSS assets.
-```shell
-php artisan vendor:publish --provider="Marshmallow\Nova\TinyMCE\FieldServiceProvider"
+```bash
+php artisan vendor:publish --provider="Marshmallow\Nova\TinyMCE\FieldServiceProvider" --tag="resources"
 ```
 
 ## Usage
-In your Nova resource add the use declaration and use the TinyMCE field:
+Include `TinyMCE` in your fields array on the Nova Resource.
 ```php
+use Marshmallow\Nova\Tinymce\TinyMCE;
+
 public function fields(Request $request)
 {
     return [
         ID::make()->sortable(),
-
-        \Marshmallow\Nova\Tinymce\TinyMCE::make('body'),
+        TinyMCE::make(__('Content'), 'content'),
     ];
 }
 ```
 
-You can use custome options like this:
-
+### Set the height
+The default height of the TinyMCE editor is handled by the `nova-tinymce.php` config file. If there is a need to change the height on some TinyMCE fields, you can do this by calling the `height()` method when you're making the field.
 ```php
 TinyMCE::make('body')->height(300),
 ```
 
 ### Override config file
-In case you have in mind a default `options` array to load any time you instantiate the `TinyMCE` field, you can optionally publish the config file and override the default options:
-
+You can publish the config and override all `TinyMCE` settings.
 ```bash
 php artisan vendor:publish --provider="Marshmallow\Nova\TinyMCE\FieldServiceProvider" --tag="config"
 ```
 
+### Adding custom styling
+If you want to add an extra styling that can be used on all TinyMCE fields, you need to publish the config file. In can add your custom styling options to the `custom_items` array in the config file. These custom styling options should look like the example below.
+```php
+'custom_items' => [
+    // This will add a .lead class on the paragraph tag.
+    [
+        'title' => 'Lead Paragraph',
+        'block' => 'p',
+        'classes' => 'lead',
+    ],
+],
+```
+
 ### Plugin customization
-You can virtually pass any configuration option for the javascript SDK to the array in the `options()` method.
+You can pass any configuration option for the javascript SDK to the array in the `options()` method.
 For example, you like to have increased the height of the text area:
 ```php
 TinyMCE::make('body')->options([
     'height' => '980'
 ]),
 ```
-
 You can see the full list of parameters in the docs:
 [https://www.tiny.cloud/docs/configure/](https://www.tiny.cloud/docs/configure/)
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Security
+
+If you discover any security related issues, please email stef@marshmallow.dev instead of using the issue tracker.
+
+## Credits
+
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.

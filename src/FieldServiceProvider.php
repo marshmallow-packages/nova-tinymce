@@ -2,9 +2,9 @@
 
 namespace Marshmallow\Nova\TinyMCE;
 
-use Illuminate\Support\ServiceProvider;
-use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
+use Laravel\Nova\Events\ServingNova;
+use Illuminate\Support\ServiceProvider;
 use Marshmallow\Nova\TinyMCE\Console\SupportFileManagerCommand;
 
 class FieldServiceProvider extends ServiceProvider
@@ -18,7 +18,7 @@ class FieldServiceProvider extends ServiceProvider
     {
         $this->publishes([
             realpath(__DIR__ . '/../dist/tinymce') => public_path('vendor/tinymce'),
-        ], 'public');
+        ], 'resources');
 
         $this->publishes([
             __DIR__.'/../config/nova-tinymce.php' => config_path('nova-tinymce.php'),

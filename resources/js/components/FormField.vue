@@ -1,5 +1,5 @@
 <template>
-    <default-field :field="field" :full-width-content="true">
+    <default-field :field="field" :full-width-content="true" :show-help-text="showHelpText">
         <template slot="field">
             <editor :id="field.id || field.attribute"
                     v-model="value"
@@ -29,6 +29,12 @@ export default {
     computed: {
         options() {
             let options = this.field.options
+
+            this.darkThemeOn = localStorage.darkThemeOn === "true";
+            if (localStorage.darkThemeOn === "true") {
+                options['skin_url'] = '/vendor/tinymce/skins/ui/mm-dark';
+                options['content_css'] = '/vendor/tinymce/skins/content/mm-dark/content.css';
+            }
 
             if (options.use_lfm) {
                 options['file_picker_callback'] = this.filePicker
