@@ -5,7 +5,6 @@ namespace Marshmallow\Nova\TinyMCE\Console;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-
 class SupportFileManagerCommand extends Command
 {
     /**
