@@ -12,7 +12,7 @@ composer require marshmallow/nova-tinymce
 ## Installation
 Run the command bellow, to publish TinyMCE JavaScript and CSS assets.
 ```bash
-php artisan vendor:publish --provider="Marshmallow\Nova\TinyMCE\FieldServiceProvider" --tag="public"
+php artisan vendor:publish --provider="Marshmallow\Nova\TinyMCE\FieldServiceProvider" --tag="resources"
 ```
 
 ## Usage
