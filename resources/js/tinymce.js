@@ -4,6 +4,9 @@ window.tinymce = tinymce;
 // A theme is also required
 import "tinymce/themes/silver";
 
+// Icons
+import "tinymce/icons/default";
+
 // Any plugins you want to use has to be imported
 import "tinymce/plugins/advlist";
 import "tinymce/plugins/anchor";
