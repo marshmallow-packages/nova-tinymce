@@ -2,8 +2,8 @@
 
 namespace Marshmallow\Nova\TinyMCE;
 
-use Laravel\Nova\Fields\Expandable;
 use Laravel\Nova\Fields\Field;
+use Laravel\Nova\Fields\Expandable;
 
 class TinyMCE extends Field
 {

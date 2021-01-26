@@ -2,9 +2,9 @@
 
 namespace Marshmallow\Nova\TinyMCE;
 
-use Illuminate\Support\ServiceProvider;
-use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
+use Laravel\Nova\Events\ServingNova;
+use Illuminate\Support\ServiceProvider;
 use Marshmallow\Nova\TinyMCE\Console\SupportFileManagerCommand;
 
 class FieldServiceProvider extends ServiceProvider
