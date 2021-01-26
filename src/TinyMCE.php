@@ -2,8 +2,8 @@
 
 namespace Marshmallow\Nova\TinyMCE;
 
-use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\Expandable;
+use Laravel\Nova\Fields\Field;
 
 class TinyMCE extends Field
 {
@@ -64,9 +64,9 @@ class TinyMCE extends Field
                         [
                             'title' => 'Lead Paragraph',
                             'block' => 'p',
-                            'classes' => 'lead'
-                        ]
-                    ]
+                            'classes' => 'lead',
+                        ],
+                    ],
                 ],
             ],
             'style_formats_merge' => true,
@@ -86,7 +86,7 @@ class TinyMCE extends Field
         $currentOptions = $this->meta['options'];
 
         return $this->withMeta([
-            'options' => array_merge($currentOptions, $options)
+            'options' => array_merge($currentOptions, $options),
         ]);
     }
 
@@ -98,7 +98,7 @@ class TinyMCE extends Field
     public function id($id)
     {
         $this->withMeta([
-            'id' => $id
+            'id' => $id,
         ]);
 
         return $this;
@@ -119,6 +119,7 @@ class TinyMCE extends Field
     public function addStyle(array $style)
     {
         $this->meta['options']['style_formats'][(count($this->meta['options']['style_formats']) - 1)]['items'][] = $style;
+
         return $this;
     }
 
