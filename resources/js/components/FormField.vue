@@ -32,7 +32,7 @@ export default {
 
             this.darkThemeOn = localStorage.darkThemeOn === "true";
             if (localStorage.darkThemeOn === "true") {
-                options['skin_url'] = '/vendor/tinymce/skins/ui/oxide-dark';
+                options['skin_url'] = '/vendor/tinymce/skins/ui/mm-dark';
             }
 
             if (options.use_lfm) {
