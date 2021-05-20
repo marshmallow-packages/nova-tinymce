@@ -23,6 +23,6 @@
     },
     "dependencies": {
         "@tinymce/tinymce-vue": "^4.0.0",
-        "tinymce": "^5.7.1"
+        "tinymce": "^5.8.1"
     }
 }
