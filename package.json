@@ -22,7 +22,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "@tinymce/tinymce-vue": "^4.0.0",
+        "@tinymce/tinymce-vue": "^4.0.4",
         "tinymce": "^5.7.1"
     }
 }
