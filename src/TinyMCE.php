@@ -65,7 +65,7 @@ class TinyMCE extends Field
             $options['style_formats'] = [
                 [
                     'title' => config('app.name'),
-                    'items' => config('nova-tinymce.custom_items'),
+                    'items' => $custom_items,
                 ],
             ];
         }
@@ -87,6 +87,24 @@ class TinyMCE extends Field
 
         return $this->withMeta([
             'options' => array_merge($currentOptions, $options),
+        ]);
+    }
+
+    public function plugins(array $plugins)
+    {
+        return $this->withMeta([
+            'options' => array_merge($this->meta['options'], [
+                "plugins" => join(' ', $plugins),
+            ]),
+        ]);
+    }
+
+    public function toolbar(string $toolbar)
+    {
+        return $this->withMeta([
+            'options' => array_merge($this->meta['options'], [
+                'toolbar' => $toolbar
+            ]),
         ]);
     }
 
