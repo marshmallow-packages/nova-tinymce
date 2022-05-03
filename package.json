@@ -2,25 +2,31 @@
     "private": true,
     "scripts": {
         "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "mix --production"
     },
     "devDependencies": {
+        "@vue/babel-plugin-jsx": "^1.1.1",
+        "@vue/compiler-sfc": "^3.2.33",
         "cross-env": "^7.0.3",
-        "laravel-mix": "^5.0.9",
-        "laravel-nova": "^1.6.0",
-        "resolve-url-loader": "^3.1.2",
-        "sass": "^1.32.5",
-        "sass-loader": "^8.0.2",
-        "vue-template-compiler": "^2.6.12"
+        "laravel-mix": "^6.0.43",
+        "laravel-nova": "^1.12.3",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.51.0",
+        "sass-loader": "^12.6.0",
+        "vue-loader": "^17.0.0",
+        "vue-template-compiler": "^2.6.14"
     },
     "dependencies": {
-        "@tinymce/tinymce-vue": "^3.0.1",
-        "tinymce": "^5.0.16",
-        "vue": "^2.5.0"
+        "@tinymce/tinymce-vue": "^4.0.7",
+        "tinymce": "^4.9.11",
+        "vue": "^3.2.33",
+        "@inertiajs/inertia": "^0.11.0",
+        "@inertiajs/inertia-vue3": "^0.6.0",
+        "vuex": "^4.0.2"
     }
 }

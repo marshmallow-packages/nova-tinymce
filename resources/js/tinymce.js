@@ -2,10 +2,10 @@ import tinymce from "tinymce/tinymce";
 window.tinymce = tinymce;
 
 // A theme is also required
-import "tinymce/themes/silver";
+import "tinymce/themes/modern";
 
 // Icons
-import "tinymce/icons/default";
+// import "tinymce/icons/default";
 
 // Any plugins you want to use has to be imported
 import "tinymce/plugins/advlist";
@@ -21,7 +21,7 @@ import "tinymce/plugins/colorpicker";
 import "tinymce/plugins/contextmenu";
 import "tinymce/plugins/directionality";
 import "tinymce/plugins/emoticons";
-import "tinymce/plugins/emoticons/js/emojis";
+// import "tinymce/plugins/emoticons/js/emojis";
 import "tinymce/plugins/fullpage";
 import "tinymce/plugins/fullscreen";
 import "tinymce/plugins/help";
@@ -40,7 +40,7 @@ import "tinymce/plugins/pagebreak";
 import "tinymce/plugins/paste";
 import "tinymce/plugins/preview";
 import "tinymce/plugins/print";
-import "tinymce/plugins/quickbars";
+// import "tinymce/plugins/quickbars";
 import "tinymce/plugins/save";
 import "tinymce/plugins/searchreplace";
 import "tinymce/plugins/spellchecker";
