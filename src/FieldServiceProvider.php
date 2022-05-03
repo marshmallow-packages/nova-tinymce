@@ -18,7 +18,7 @@ class FieldServiceProvider extends ServiceProvider
     {
         $this->publishes([
             realpath(__DIR__ . '/../dist/tinymce') => public_path('vendor/tinymce'),
-        ], 'resources');
+        ], 'public');
 
         $this->publishes([
             __DIR__.'/../config/nova-tinymce.php' => config_path('nova-tinymce.php'),
@@ -32,7 +32,7 @@ class FieldServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                SupportFileManagerCommand::class,
+                SupportFileManagerCommand::class
             ]);
         }
     }

@@ -11,7 +11,7 @@ return [
     | the TinyMCE "Content type" selector.
     |
     */
-   'custom_items' => [
+    'custom_items' => [
         [
             'title' => 'Lead Paragraph',
             'block' => 'p',
@@ -31,14 +31,18 @@ return [
     'height' => 350,
     'content_css' => '/vendor/tinymce/skins/ui/oxide/content.min.css',
     'skin_url' => '/vendor/tinymce/skins/ui/oxide',
+    'content_css_dark' => '/vendor/tinymce/skins/ui/oxide-dark/content.min.css',
+    'skin_url_dark' => '/vendor/tinymce/skins/ui/oxide-dark',
     'path_absolute' => '/',
     'plugins' => [
-        'lists', 'preview', 'hr', 'anchor',
+        'lists', 'preview',  'anchor',
         'pagebreak', 'image', 'wordcount',
-        'fullscreen', 'directionality', 'paste', 'textpattern',
+        'fullscreen', 'directionality', 'paste',
         'advlist', 'autolink', 'charmap', 'code', 'emoticons',
-        'fullscreen', 'insertdatetime', 'legacyoutput', 'link',
-        'media', 'nonbreaking', 'preview', 'print', 'save', 'table',
+        'fullscreen', 'insertdatetime',  'link',
+        'media', 'nonbreaking', 'preview',  'save', 'table',
+
+        // 'hr','print',
 
         // 'searchreplace', 'template', 'textpattern',
         // 'visualblocks', 'visualchars', 'toc', 'tabfocus',
@@ -52,6 +56,7 @@ return [
     'relative_urls' => false,
     'lfm_url' => 'filemanager',
     'use_lfm' => false,
+    'use_dark' => true,
     'table_header_type' => 'sectionCells',
     'link_class_list' => [
         ['title' => 'Default', 'value' => ''],
