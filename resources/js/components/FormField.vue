@@ -37,9 +37,9 @@
 
                 this.darkThemeOn = localStorage.darkThemeOn === "true";
                 if (localStorage.darkThemeOn === "true") {
-                    options["skin_url"] = "/vendor/tinymce/skins/ui/mm-dark";
+                    options["skin_url"] = "/vendor/tinymce/skins/ui/oxide-dark";
                     options["content_css"] =
-                        "/vendor/tinymce/skins/content/mm-dark/content.css";
+                        "/vendor/tinymce/skins/content/oxide-dark/content.css";
                 }
 
                 if (options.use_lfm) {
@@ -72,7 +72,7 @@
                 this.value = value;
             },
 
-            filePicker: function(callback, value, meta) {
+            filePicker: function (callback, value, meta) {
                 let x =
                     window.innerWidth ||
                     document.documentElement.clientWidth ||

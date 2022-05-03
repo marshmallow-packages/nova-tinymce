@@ -2,7 +2,7 @@ import tinymce from "tinymce/tinymce";
 window.tinymce = tinymce;
 
 // A theme is also required
-import "tinymce/themes/modern";
+import "tinymce/themes/silver";
 
 // Icons
 // import "tinymce/icons/default";
