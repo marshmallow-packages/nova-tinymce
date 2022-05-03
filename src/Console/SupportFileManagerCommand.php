@@ -5,6 +5,7 @@ namespace Marshmallow\Nova\TinyMCE\Console;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
+
 class SupportFileManagerCommand extends Command
 {
     /**
@@ -12,7 +13,7 @@ class SupportFileManagerCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'nova-tinymce:suport-lfm';
+    protected $signature = 'nova-tinymce:support-lfm';
 
     /**
      * The console command description.

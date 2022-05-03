@@ -1,10 +1,10 @@
 var show_list;
 var sort_type = "alphabetic";
 
-$(document).ready(function() {
+$(document).ready(function () {
     bootbox.setDefaults({ locale: lang["locale-bootbox"] });
     loadFolders();
-    performLfmRequest("errors").done(function(data) {
+    performLfmRequest("errors").done(function (data) {
         var response = JSON.parse(data);
         for (var i = 0; i < response.length; i++) {
             $("#alerts").append(
@@ -16,7 +16,7 @@ $(document).ready(function() {
         }
     });
 
-    $(window).on("dragenter", function() {
+    $(window).on("dragenter", function () {
         $("#uploadModal").modal("show");
     });
 });
@@ -25,28 +25,28 @@ $(document).ready(function() {
 // ==  Navbar actions  ==
 // ======================
 
-$("#nav-buttons a").click(function(e) {
+$("#nav-buttons a").click(function (e) {
     e.preventDefault();
 });
 
-$("#to-previous").click(function() {
+$("#to-previous").click(function () {
     var previous_dir = getPreviousDir();
     if (previous_dir == "") return;
     goTo(previous_dir);
 });
 
-$("#add-folder").click(function() {
-    bootbox.prompt(lang["message-name"], function(result) {
+$("#add-folder").click(function () {
+    bootbox.prompt(lang["message-name"], function (result) {
         if (result == null) return;
         createFolder(result);
     });
 });
 
-$("#upload").click(function() {
+$("#upload").click(function () {
     $("#uploadModal").modal("show");
 });
 
-$("#upload-btn").click(function() {
+$("#upload-btn").click(function () {
     $(this)
         .html("")
         .append($("<i>").addClass("fa fa-refresh fa-spin"))
@@ -55,41 +55,39 @@ $("#upload-btn").click(function() {
 
     function resetUploadForm() {
         $("#uploadModal").modal("hide");
-        $("#upload-btn")
-            .html(lang["btn-upload"])
-            .removeClass("disabled");
+        $("#upload-btn").html(lang["btn-upload"]).removeClass("disabled");
         $("input#upload").val("");
     }
 
     $("#uploadForm").ajaxSubmit({
-        success: function(data, statusText, xhr, $form) {
+        success: function (data, statusText, xhr, $form) {
             resetUploadForm();
             refreshFoldersAndItems(data);
             displaySuccessMessage(data);
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             displayErrorResponse(jqXHR);
             resetUploadForm();
         },
     });
 });
 
-$("#thumbnail-display").click(function() {
+$("#thumbnail-display").click(function () {
     show_list = 0;
     loadItems();
 });
 
-$("#list-display").click(function() {
+$("#list-display").click(function () {
     show_list = 1;
     loadItems();
 });
 
-$("#list-sort-alphabetic").click(function() {
+$("#list-sort-alphabetic").click(function () {
     sort_type = "alphabetic";
     loadItems();
 });
 
-$("#list-sort-time").click(function() {
+$("#list-sort-time").click(function () {
     sort_type = "time";
     loadItems();
 });
@@ -98,11 +96,11 @@ $("#list-sort-time").click(function() {
 // ==  Folder actions  ==
 // ======================
 
-$(document).on("click", ".file-item", function(e) {
+$(document).on("click", ".file-item", function (e) {
     useFile($(this).data("id"));
 });
 
-$(document).on("click", ".folder-item", function(e) {
+$(document).on("click", ".folder-item", function (e) {
     goTo($(this).data("id"));
 });
 
@@ -120,11 +118,7 @@ function getPreviousDir() {
 }
 
 function dir_starts_with(str) {
-    return (
-        $("#working_dir")
-            .val()
-            .indexOf(str) === 0
-    );
+    return $("#working_dir").val().indexOf(str) === 0;
 }
 
 function setOpenFolders() {
@@ -154,7 +148,7 @@ function performLfmRequest(url, parameter, type) {
     var data = defaultParameters();
 
     if (parameter != null) {
-        $.each(parameter, function(key, value) {
+        $.each(parameter, function (key, value) {
             data[key] = value;
         });
     }
@@ -165,7 +159,7 @@ function performLfmRequest(url, parameter, type) {
         url: lfm_route + "/" + url,
         data: data,
         cache: false,
-    }).fail(function(jqXHR, textStatus, errorThrown) {
+    }).fail(function (jqXHR, textStatus, errorThrown) {
         displayErrorResponse(jqXHR);
     });
 }
@@ -185,13 +179,13 @@ function displaySuccessMessage(data) {
             .append($("<i>").addClass("fa fa-check"))
             .append(" File Uploaded Successfully.");
         $("#alerts").append(success);
-        setTimeout(function() {
+        setTimeout(function () {
             success.remove();
         }, 2000);
     }
 }
 
-var refreshFoldersAndItems = function(data) {
+var refreshFoldersAndItems = function (data) {
     loadFolders();
     data = data.replace(/\s/g, "");
     if (data != "OK") {
@@ -200,13 +194,13 @@ var refreshFoldersAndItems = function(data) {
     }
 };
 
-var hideNavAndShowEditor = function(data) {
+var hideNavAndShowEditor = function (data) {
     $("#nav-buttons > ul").addClass("hidden");
     $("#content").html(data);
 };
 
 function loadFolders() {
-    performLfmRequest("folders", {}, "html").done(function(data) {
+    performLfmRequest("folders", {}, "html").done(function (data) {
         $("#tree").html(data);
         loadItems();
     });
@@ -219,7 +213,7 @@ function loadItems() {
         { show_list: show_list, sort_type: sort_type },
         "html"
     )
-        .done(function(data) {
+        .done(function (data) {
             var response = JSON.parse(data);
             $("#content").html(response.html);
             $("#nav-buttons > ul").removeClass("hidden");
@@ -233,7 +227,7 @@ function loadItems() {
             }
             setOpenFolders();
         })
-        .always(function() {
+        .always(function () {
             $("#lfm-loader").hide();
         });
 }
@@ -248,7 +242,7 @@ function rename(item_name) {
     bootbox.prompt({
         title: lang["message-rename"],
         value: item_name,
-        callback: function(result) {
+        callback: function (result) {
             if (result == null) return;
             performLfmRequest("rename", {
                 file: item_name,
@@ -259,7 +253,7 @@ function rename(item_name) {
 }
 
 function trash(item_name) {
-    bootbox.confirm(lang["message-delete"], function(result) {
+    bootbox.confirm(lang["message-delete"], function (result) {
         if (result == true) {
             performLfmRequest("delete", { items: item_name }).done(
                 refreshFoldersAndItems
@@ -295,9 +289,8 @@ function useFile(file_url) {
 
     function useTinymce3(url) {
         var win = tinyMCEPopup.getWindowArg("window");
-        win.document.getElementById(
-            tinyMCEPopup.getWindowArg("input")
-        ).value = url;
+        win.document.getElementById(tinyMCEPopup.getWindowArg("input")).value =
+            url;
         if (typeof win.ImageDialog != "undefined") {
             // Update image dimensions
             if (win.ImageDialog.getImageData) {

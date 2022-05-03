@@ -12,21 +12,18 @@
     "devDependencies": {
         "@vue/babel-plugin-jsx": "^1.1.1",
         "@vue/compiler-sfc": "^3.2.33",
-        "cross-env": "^7.0.3",
         "laravel-mix": "^6.0.43",
-        "laravel-nova": "^1.12.3",
+        "form-backend-validation": "^2.3.3",
+        "lodash": "^4.17.21",
+        "postcss": "^8.3.11",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.51.0",
         "sass-loader": "^12.6.0",
-        "vue-loader": "^17.0.0",
-        "vue-template-compiler": "^2.6.14"
-    },
-    "dependencies": {
         "@tinymce/tinymce-vue": "^5.0.0",
-        "tinymce": "^5.10.4",
-        "vue": "^3.2.33",
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-vue3": "^0.6.0",
-        "vuex": "^4.0.2"
+        "vuex": "^4.0.2",
+        "tinymce": "^6.0",
+        "vue-loader": "^16.8.3"
     }
 }
