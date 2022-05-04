@@ -1,5 +1,5 @@
 <template>
-    <PanelItem :field="field">
+    <PanelItem :index="index" :field="field">
         <template #value>
             <Excerpt :content="field.value" :should-show="field.shouldShow" />
         </template>
@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        props: ["resource", "resourceName", "resourceId", "field"],
+        props: ["resource", "resourceName", "resourceId", "field", "index"],
     };
 </script>
 
