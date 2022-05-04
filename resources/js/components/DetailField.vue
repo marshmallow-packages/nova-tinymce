@@ -1,5 +1,5 @@
 <template>
-    <PanelItem :index="index" :field="field">
+    <PanelItem :field="field">
         <template #value>
             <Excerpt :content="field.value" :should-show="field.shouldShow" />
         </template>
