@@ -37,12 +37,12 @@ return [
     'plugins' => [
         'lists', 'preview',  'anchor',
         'pagebreak', 'image', 'wordcount',
-        'fullscreen', 'directionality', 'paste',
+        'fullscreen', 'directionality',
         'advlist', 'autolink', 'charmap', 'code', 'emoticons',
         'fullscreen', 'insertdatetime',  'link',
         'media', 'nonbreaking', 'preview',  'save', 'table',
 
-        // 'hr','print',
+        // 'hr','print','paste',
 
         // 'searchreplace', 'template', 'textpattern',
         // 'visualblocks', 'visualchars', 'toc', 'tabfocus',
