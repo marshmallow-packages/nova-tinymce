@@ -38,6 +38,7 @@ import "tinymce/plugins/code";
 import "tinymce/plugins/codesample";
 import "tinymce/plugins/directionality";
 import "tinymce/plugins/emoticons";
+import "tinymce/plugins/emoticons/js/emojis";
 import "tinymce/plugins/fullscreen";
 import "tinymce/plugins/help";
 import "tinymce/plugins/image";
