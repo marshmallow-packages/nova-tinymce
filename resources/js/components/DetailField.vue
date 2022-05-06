@@ -1,13 +1,22 @@
 <template>
-    <panel-item :field="field">
-        <template slot="value">
-            <excerpt :content="field.value" :should-show="field.shouldShow" />
+    <PanelItem :index="index" :field="field">
+        <template #value>
+            <Excerpt :content="field.value" :should-show="field.shouldShow" />
         </template>
-    </panel-item>
+    </PanelItem>
 </template>
 
 <script>
     export default {
-        props: ["resource", "resourceName", "resourceId", "field"],
+        props: ["resource", "resourceName", "resourceId", "field", "index"],
     };
 </script>
+
+<style lang="scss">
+    .markdown {
+        p {
+            font-size: inherit;
+            margin-bottom: 1rem;
+        }
+    }
+</style>

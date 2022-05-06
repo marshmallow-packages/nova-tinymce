@@ -32,7 +32,7 @@ class FieldServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                SupportFileManagerCommand::class,
+                SupportFileManagerCommand::class
             ]);
         }
     }
