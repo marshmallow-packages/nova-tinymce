@@ -6,7 +6,7 @@
     >
         <template #field>
             <editor
-                :id="currentField.id || currentField.attribute"
+                :id="'tiny_' + (currentField.id || currentField.attribute)"
                 v-model="value"
                 :class="errorClasses"
                 :placeholder="currentField.name"
