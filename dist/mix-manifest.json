@@ -1,5 +1,6 @@
 {
     "/js/tinymce.js": "/js/tinymce.js",
     "/js/field.js": "/js/field.js",
+    "/css/custom.css": "/css/custom.css",
     "/css/field.css": "/css/field.css"
 }

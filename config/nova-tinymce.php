@@ -29,12 +29,14 @@ return [
     |
     */
     'height' => 350,
-    'content_css' => '/vendor/tinymce/skins/ui/oxide/content.min.css',
+    'content_css' => '/vendor/tinymce/skins/ui/oxide/content.min.css, /vendor/tinymce/css/custom.css',
     'skin_url' => '/vendor/tinymce/skins/ui/oxide',
     'content_css_dark' => '/vendor/tinymce/skins/ui/oxide-dark/content.min.css',
     'skin_url_dark' => '/vendor/tinymce/skins/ui/oxide-dark',
     'path_absolute' => '/',
     'plugins' => [
+        'my_variables',
+        'my_buttons',
         'lists', 'preview',  'anchor',
         'pagebreak', 'image', 'wordcount',
         'fullscreen', 'directionality',
@@ -52,7 +54,7 @@ return [
         // 'spellchecker', 'help',
     ],
 
-    'toolbar' => 'undo redo | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link',
+    'toolbar' => ' undo redo | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link | my_buttons my_variables ',
     'relative_urls' => false,
     'lfm_url' => 'filemanager',
     'use_lfm' => false,
@@ -77,4 +79,16 @@ return [
     'image_class_list' => [
         ['title' => 'Default', 'value' => ''],
     ],
+    'variable_mapper' => [
+        'account_id' => "Account ID",
+        'email' => "E-mail address"
+    ],
+    'my_variables' => [],
+    'my_buttons' => [
+        ['title' => 'Default', 'value' => ''],
+        ['title' => 'Button Primary', 'value' => 'btn btn-primary btn-wide'],
+        ['title' => 'Button Primary (Outline)', 'value' => 'btn btn-primary-outline btn-wide'],
+        ['title' => 'Button Secondary', 'value' => 'btn btn-secondary btn-wide'],
+        ['title' => 'Button Secondary (Outline)', 'value' => 'btn btn-secondary-outline btn-wide'],
+    ]
 ];

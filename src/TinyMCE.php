@@ -60,7 +60,12 @@ class TinyMCE extends Field
             'table_cell_class_list' => config('nova-tinymce.table_cell_class_list'),
             'table_row_class_list' => config('nova-tinymce.table_row_class_list'),
             'image_class_list' => config('nova-tinymce.image_class_list'),
-
+            'variable_mapper' => config('nova-tinymce.variable_mapper'),
+            'variable_valid' => config('nova-tinymce.variable_valid'),
+            'menu' => config('nova-tinymce.menu'),
+            'menubar' => config('nova-tinymce.menubar'),
+            'my_buttons' => config('nova-tinymce.my_buttons'),
+            'my_variables' => config('nova-tinymce.my_variables'),
             'style_formats_merge' => true,
         ];
 
@@ -98,6 +103,50 @@ class TinyMCE extends Field
         return $this->withMeta([
             'options' => array_merge($this->meta['options'], [
                 "plugins" => join(' ', $plugins),
+            ]),
+        ]);
+    }
+
+
+    public function buttons(array $buttons)
+    {
+
+        $mappedButtons = [];
+        collect($buttons)->map(function ($value, $key) use (&$mappedButtons) {
+            $mappedButtons[] = [
+                'title' => $key,
+                'value' => $value,
+            ];
+            return $mappedButtons;
+        });
+
+        return $this->withMeta([
+            'options' => array_merge($this->meta['options'], [
+                "my_buttons" => $mappedButtons,
+            ]),
+        ]);
+    }
+
+    public function variables(array $variables)
+    {
+        $mappedVars = [];
+        $allowedVars = [];
+        collect($variables)->map(function ($key, $value) use (&$mappedVars, &$allowedVars) {
+            $mappedVars[] = [
+                'title' => $key,
+                'value' => $value,
+            ];
+            $allowedVars[] = $value;
+            $allowedVars[] = " " . $value . " ";
+            return $mappedVars;
+        });
+
+        // $allowedVars
+
+        return $this->withMeta([
+            'options' => array_merge($this->meta['options'], [
+                "my_variables" => $mappedVars,
+                // "variable_valid" => $allowedVars,
             ]),
         ]);
     }
