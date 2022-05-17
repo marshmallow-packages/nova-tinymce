@@ -375,7 +375,8 @@ tinymce.PluginManager.add("my_variables", function (editor) {
         });
 
         editor.ui.registry.addMenuButton(menuTitle, {
-            text: menuText,
+            tooltip: menuText,
+            icon: "code-sample",
             fetch: function (callback) {
                 callback(itemObjects);
             },

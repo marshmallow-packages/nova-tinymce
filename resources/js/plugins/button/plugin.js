@@ -36,7 +36,8 @@ tinymce.PluginManager.add("my_buttons", function (editor) {
         });
 
         editor.ui.registry.addMenuButton(menuTitle, {
-            text: menuText,
+            tooltip: menuText,
+            icon: "template",
             fetch: function (callback) {
                 callback(itemObjects);
             },
