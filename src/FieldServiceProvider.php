@@ -21,13 +21,17 @@ class FieldServiceProvider extends ServiceProvider
         ], 'resources');
 
         $this->publishes([
-            __DIR__.'/../config/nova-tinymce.php' => config_path('nova-tinymce.php'),
+            realpath(__DIR__ . '/../dist/css/custom.css') => public_path('vendor/tinymce/css/custom.css'),
+        ], 'resources');
+
+        $this->publishes([
+            __DIR__ . '/../config/nova-tinymce.php' => config_path('nova-tinymce.php'),
         ], 'config');
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script('Nova-TinyMCE-tinymce', __DIR__.'/../dist/js/tinymce.js');
-            Nova::script('Nova-TinyMCE', __DIR__.'/../dist/js/field.js');
-            Nova::style('Nova-TinyMCE', __DIR__.'/../dist/css/field.css');
+            Nova::script('Nova-TinyMCE-tinymce', __DIR__ . '/../dist/js/tinymce.js');
+            Nova::script('Nova-TinyMCE', __DIR__ . '/../dist/js/field.js');
+            Nova::style('Nova-TinyMCE', __DIR__ . '/../dist/css/field.css');
         });
 
         if ($this->app->runningInConsole()) {
@@ -44,6 +48,6 @@ class FieldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/nova-tinymce.php', 'nova-tinymce');
+        $this->mergeConfigFrom(__DIR__ . '/../config/nova-tinymce.php', 'nova-tinymce');
     }
 }

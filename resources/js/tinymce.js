@@ -58,3 +58,7 @@ import "tinymce/plugins/template";
 import "tinymce/plugins/visualblocks";
 import "tinymce/plugins/visualchars";
 import "tinymce/plugins/wordcount";
+
+// Any external plugins you want to use has to be imported
+import "@/plugins/variable/plugin";
+import "@/plugins/button/plugin";
