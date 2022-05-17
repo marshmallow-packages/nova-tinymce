@@ -1,18 +1,1 @@
-.mce-content-body .variable {
-  background-color: #cbd5e1;
-  padding: 2px;
-  border-radius: 4px;
-}
-
-.mce-content-body .variable {
-  cursor: default;
-  background-color: #65b9dd;
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: 3px;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 10px;
-  display: inline-block;
-  line-height: 12px;
-}
+.mce-content-body .variable{background-color:#cbd5e1;background-color:#65b9dd;border-radius:4px;border-radius:3px;color:#fff;cursor:default;display:inline-block;font-size:10px;font-style:normal;font-weight:700;line-height:12px;padding:2px;padding:2px 8px}
