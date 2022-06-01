@@ -16,7 +16,7 @@
         "@vue/babel-plugin-jsx": "^1.1.1",
         "@vue/compiler-sfc": "^3.2.33",
         "form-backend-validation": "^2.3.3",
-        "laravel-mix": "^6.0.43",
+        "laravel-mix": "^6.0.44",
         "lodash": "^4.17.21",
         "postcss": "^8.3.11",
         "resolve-url-loader": "^5.0.0",
