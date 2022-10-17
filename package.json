@@ -24,7 +24,7 @@
         "sass-loader": "^12.6.0",
         "tinymce": "^6.0",
         "vue-loader": "^16.8.3",
-        "vuex": "^4.0.2"
+        "vuex": "^4.1.0"
     },
     "dependencies": {}
 }
