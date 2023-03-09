@@ -67,6 +67,8 @@ return [
         ['title' => 'Button Secondary', 'value' => 'btn btn-secondary btn-wide'],
         ['title' => 'Button Secondary (Outline)', 'value' => 'btn btn-secondary-outline btn-wide'],
     ],
+    'formats' => [],
+    'paste_as_text' => false,
     'table_class_list' => [
         ['title' => 'Default', 'value' => ''],
     ],

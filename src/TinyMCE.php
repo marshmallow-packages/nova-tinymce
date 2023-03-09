@@ -67,6 +67,8 @@ class TinyMCE extends Field
             'my_buttons' => config('nova-tinymce.my_buttons'),
             'my_variables' => config('nova-tinymce.my_variables'),
             'style_formats_merge' => true,
+            'formats' => config('nova-tinymce.formats'),
+            'paste_as_text' => config('nova-tinymce.paste_as_text'),
         ];
 
         if ($custom_items = config('nova-tinymce.custom_items')) {
