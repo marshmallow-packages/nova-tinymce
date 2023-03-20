@@ -6,12 +6,13 @@
     >
         <template #field>
             <editor
+                api-key="no-api-key"
                 :id="'tiny_' + (currentField.id || currentField.attribute)"
                 v-model="value"
                 :class="errorClasses"
                 :placeholder="currentField.name"
                 :init="options"
-            ></editor>
+            />
 
             <p v-if="hasError" class="my-2 text-danger">
                 {{ firstError }}
