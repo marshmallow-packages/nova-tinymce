@@ -2857,7 +2857,6 @@ __webpack_require__.r(__webpack_exports__);
      */
     setInitialValue: function setInitialValue() {
       this.value = this.field.value || "";
-      console.log(this.tiny_field_id);
     },
     /**
      * Fill the given FormData object with the field's internal value.
@@ -2870,7 +2869,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     handleChange: function handleChange(value) {
       this.value = value;
-      console.warn("value", value, tinymce);
+      console.log("value", value, tinymce);
       // tinymce.remove("YourSelectorValue");
     },
     mounted: function mounted() {
@@ -2985,18 +2984,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "show-help-text": _ctx.showHelpText
   }, {
     field: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_editor, {
+      return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_editor, (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
         "api-key": "no-api-key",
         id: $data.tiny_field_id,
+        key: $data.tiny_field_id,
         modelValue: _ctx.value,
         "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
           return _ctx.value = $event;
         }),
-        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(_ctx.errorClasses),
+        "class": _ctx.errorClasses,
         placeholder: _ctx.currentField.name,
-        init: $options.options,
-        inline: false
-      }, null, 8 /* PROPS */, ["id", "modelValue", "class", "placeholder", "init"]), _ctx.hasError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.firstError), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+        init: $options.options
+      }, _ctx.currentField.extraAttributes, {
+        inline: false,
+        onNodeChange: $options.handleChange
+      }), null, 16 /* FULL_PROPS */, ["id", "modelValue", "class", "placeholder", "init", "onNodeChange"])), _ctx.hasError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.firstError), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["field", "show-help-text"]);

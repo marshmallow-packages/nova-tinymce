@@ -8,10 +8,12 @@
             <editor
                 api-key="no-api-key"
                 :id="tiny_field_id"
+                :key="tiny_field_id"
                 v-model="value"
                 :class="errorClasses"
                 :placeholder="currentField.name"
                 :init="options"
+                v-bind="currentField.extraAttributes"
                 :inline="false"
             />
 
@@ -79,7 +81,6 @@
              */
             setInitialValue() {
                 this.value = this.field.value || "";
-                console.log(this.tiny_field_id);
             },
 
             /**
@@ -94,12 +95,6 @@
              */
             handleChange(value) {
                 this.value = value;
-                console.warn("value", value, tinymce);
-                // tinymce.remove("YourSelectorValue");
-            },
-
-            mounted() {
-                console.warn(this);
             },
 
             filePicker: function (callback, value, meta) {
