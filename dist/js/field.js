@@ -2869,11 +2869,6 @@ __webpack_require__.r(__webpack_exports__);
      */
     handleChange: function handleChange(value) {
       this.value = value;
-      console.log("value", value, tinymce);
-      // tinymce.remove("YourSelectorValue");
-    },
-    mounted: function mounted() {
-      console.warn(this);
     },
     filePicker: function filePicker(callback, value, meta) {
       var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName("body")[0].clientWidth;
@@ -2996,9 +2991,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         placeholder: _ctx.currentField.name,
         init: $options.options
       }, _ctx.currentField.extraAttributes, {
-        inline: false,
-        onNodeChange: $options.handleChange
-      }), null, 16 /* FULL_PROPS */, ["id", "modelValue", "class", "placeholder", "init", "onNodeChange"])), _ctx.hasError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.firstError), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+        inline: false
+      }), null, 16 /* FULL_PROPS */, ["id", "modelValue", "class", "placeholder", "init"])), _ctx.hasError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.firstError), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
     _: 1 /* STABLE */
   }, 8 /* PROPS */, ["field", "show-help-text"]);
