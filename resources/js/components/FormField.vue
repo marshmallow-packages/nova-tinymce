@@ -7,16 +7,12 @@
         <template #field>
             <editor
                 api-key="no-api-key"
-                :id="
-                    'tiny_' +
-                    (currentField.attribute ||
-                        currentField.id ||
-                        currentField.uniqueKey)
-                "
+                :id="tiny_field_id"
                 v-model="value"
                 :class="errorClasses"
                 :placeholder="currentField.name"
                 :init="options"
+                :inline="false"
             />
 
             <p v-if="hasError" class="my-2 text-danger">
@@ -35,13 +31,28 @@
 
         mixins: [DependentFormField, HandlesValidationErrors],
 
-        props: ["index", "resource", "resourceName", "resourceId", "field"],
+        props: [
+            "index",
+            "resource",
+            "resourceName",
+            "resourceId",
+            "field",
+            "tiny_field_id",
+        ],
+
+        data() {
+            return {
+                tiny_field_id:
+                    "tiny_" +
+                    (this.field.attribute ||
+                        this.field.id ||
+                        this.field.uniqueKey),
+            };
+        },
 
         computed: {
             options() {
                 let options = this.field.options;
-
-                console.log(this.field, this.currentField);
 
                 if (options.use_lfm) {
                     options["file_picker_callback"] = this.filePicker;
@@ -68,6 +79,7 @@
              */
             setInitialValue() {
                 this.value = this.field.value || "";
+                console.log(this.tiny_field_id);
             },
 
             /**
@@ -82,6 +94,12 @@
              */
             handleChange(value) {
                 this.value = value;
+                console.warn("value", value, tinymce);
+                // tinymce.remove("YourSelectorValue");
+            },
+
+            mounted() {
+                console.warn(this);
             },
 
             filePicker: function (callback, value, meta) {
