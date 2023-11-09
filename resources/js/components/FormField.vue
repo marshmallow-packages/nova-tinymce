@@ -7,7 +7,12 @@
         <template #field>
             <editor
                 api-key="no-api-key"
-                :id="'tiny_' + (currentField.id || currentField.attribute)"
+                :id="
+                    'tiny_' +
+                    (currentField.attribute ||
+                        currentField.id ||
+                        currentField.uniqueKey)
+                "
                 v-model="value"
                 :class="errorClasses"
                 :placeholder="currentField.name"
@@ -30,11 +35,13 @@
 
         mixins: [DependentFormField, HandlesValidationErrors],
 
-        props: ["resourceName", "resourceId", "field"],
+        props: ["index", "resource", "resourceName", "resourceId", "field"],
 
         computed: {
             options() {
                 let options = this.field.options;
+
+                console.log(this.field, this.currentField);
 
                 if (options.use_lfm) {
                     options["file_picker_callback"] = this.filePicker;
