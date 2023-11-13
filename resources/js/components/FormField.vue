@@ -1,5 +1,6 @@
 <template>
     <DefaultField
+        :key="editorKey"
         :field="currentField"
         :full-width-content="true"
         :show-help-text="showHelpText"
@@ -42,8 +43,17 @@
             "tiny_field_id",
         ],
 
+        mounted() {
+            Nova.$on("flexible-content-order-changed", this.incrementKey);
+        },
+
+        unmounted() {
+            Nova.$off("flexible-content-order-changed", this.incrementKey);
+        },
+
         data() {
             return {
+                editorKey: 0,
                 tiny_field_id:
                     "tiny_" +
                     (this.field.attribute ||
@@ -76,6 +86,10 @@
         },
 
         methods: {
+            incrementKey() {
+                this.editorKey++;
+            },
+
             /*
              * Set the initial, internal value for the field.
              */
