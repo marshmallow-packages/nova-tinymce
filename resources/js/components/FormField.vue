@@ -1,5 +1,6 @@
 <template>
     <DefaultField
+        :key="editorKey"
         :field="currentField"
         :full-width-content="true"
         :show-help-text="showHelpText"
@@ -7,11 +8,14 @@
         <template #field>
             <editor
                 api-key="no-api-key"
-                :id="'tiny_' + (currentField.id || currentField.attribute)"
+                :id="tiny_field_id"
+                :key="tiny_field_id"
                 v-model="value"
                 :class="errorClasses"
                 :placeholder="currentField.name"
                 :init="options"
+                v-bind="currentField.extraAttributes"
+                :inline="false"
             />
 
             <p v-if="hasError" class="my-2 text-danger">
@@ -30,7 +34,33 @@
 
         mixins: [DependentFormField, HandlesValidationErrors],
 
-        props: ["resourceName", "resourceId", "field"],
+        props: [
+            "index",
+            "resource",
+            "resourceName",
+            "resourceId",
+            "field",
+            "tiny_field_id",
+        ],
+
+        mounted() {
+            Nova.$on("flexible-content-order-changed", this.incrementKey);
+        },
+
+        unmounted() {
+            Nova.$off("flexible-content-order-changed", this.incrementKey);
+        },
+
+        data() {
+            return {
+                editorKey: 0,
+                tiny_field_id:
+                    "tiny_" +
+                    (this.field.attribute ||
+                        this.field.id ||
+                        this.field.uniqueKey),
+            };
+        },
 
         computed: {
             options() {
@@ -56,6 +86,10 @@
         },
 
         methods: {
+            incrementKey() {
+                this.editorKey++;
+            },
+
             /*
              * Set the initial, internal value for the field.
              */

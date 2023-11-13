@@ -68,6 +68,8 @@ class TinyMCE extends Field
             'my_variables' => config('nova-tinymce.my_variables'),
             'style_formats_merge' => true,
             'paste_as_text' => config('nova-tinymce.paste_as_text'),
+            'removed_menuitems' => config('nova-tinymce.removed_menuitems'),
+            'color_map' => config('nova-tinymce.color_map'),
             'promotion' => false,
         ];
 
