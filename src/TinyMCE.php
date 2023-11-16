@@ -69,9 +69,15 @@ class TinyMCE extends Field
             'style_formats_merge' => true,
             'paste_as_text' => config('nova-tinymce.paste_as_text'),
             'removed_menuitems' => config('nova-tinymce.removed_menuitems'),
+            'browser_spellcheck' => config('nova-tinymce.browser_spellcheck', false),
+            'contextmenu' => config('nova-tinymce.contextmenu', false),
             'color_map' => config('nova-tinymce.color_map'),
             'promotion' => false,
         ];
+
+        if ($extra_options = config('nova-tinymce.extra_options')) {
+            $options = array_merge($options, $extra_options);
+        }
 
         if (config('nova-tinymce.formats') && !empty(config('nova-tinymce.formats'))) {
             $options['formats'] = config('nova-tinymce.formats');

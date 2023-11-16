@@ -54,6 +54,10 @@ return [
     'lfm_url' => 'filemanager',
     'use_lfm' => false,
     'use_dark' => true,
+    'browser_spellcheck' => false,
+    'contextmenu' => false,
+
+
     'table_header_type' => 'sectionCells',
     'link_class_list' => [
         ['title' => 'Default', 'value' => ''],
@@ -63,6 +67,7 @@ return [
         ['title' => 'Button Secondary (Outline)', 'value' => 'btn btn-secondary-outline btn-wide'],
     ],
     'formats' => [],
+
     // 'removed_menuitems' => [],
     'paste_as_text' => false,
     'table_class_list' => [
@@ -116,5 +121,7 @@ return [
 
         '#000000', 'Black',
         '#ffffff', 'White'
-    ]
+    ],
+    'extra_options' => [],
+
 ];
