@@ -70,7 +70,7 @@ class TinyMCE extends Field
             'paste_as_text' => config('nova-tinymce.paste_as_text'),
             'removed_menuitems' => config('nova-tinymce.removed_menuitems'),
             'browser_spellcheck' => config('nova-tinymce.browser_spellcheck', false),
-            'contextmenu' => config('nova-tinymce.contextmenu', false),
+            'contextmenu' => config('nova-tinymce.contextmenu', true),
             'color_map' => config('nova-tinymce.color_map'),
             'promotion' => false,
         ];
