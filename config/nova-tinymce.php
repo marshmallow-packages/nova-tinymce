@@ -55,7 +55,7 @@ return [
     'use_lfm' => false,
     'use_dark' => true,
     'browser_spellcheck' => false,
-    'contextmenu' => false,
+    'contextmenu' => true,
 
 
     'table_header_type' => 'sectionCells',
