@@ -28,6 +28,7 @@ return [
     | fields by default.
     |
     */
+    'license_key' => 'gpl',
     'height' => 350,
     'content_css' => '/vendor/tinymce/skins/ui/oxide/content.min.css, /vendor/tinymce/css/custom.css',
     'skin_url' => '/vendor/tinymce/skins/ui/oxide',
@@ -35,11 +36,34 @@ return [
     'skin_url_dark' => '/vendor/tinymce/skins/ui/oxide-dark',
     'path_absolute' => '/',
     'plugins' => [
-        'my_variables', 'my_buttons', 'lists', 'wordcount', 'advlist', 'autolink', 'charmap', 'emoticons', 'link', 'table', 'visualblocks',
-        // 'preview', 'anchor','pagebreak','image', 'fullscreen','directionality', 'code',
-        // 'insertdatetime','media','nonbreaking', 'save',
-        // 'hr','print','paste', 'searchreplace', 'template', 'textpattern',
-        // 'visualchars', 'toc', 'tabfocus',
+        'my_variables',
+        'my_buttons',
+        'lists',
+        'preview',
+        'anchor',
+        'pagebreak',
+        'image',
+        'wordcount',
+        'fullscreen',
+        'directionality',
+        'advlist',
+        'autolink',
+        'charmap',
+        'code',
+        'emoticons',
+        'fullscreen',
+        'insertdatetime',
+        'link',
+        'media',
+        'nonbreaking',
+        'preview',
+        'save',
+        'table',
+
+        // 'hr','print','paste',
+
+        // 'searchreplace', 'template', 'textpattern',
+        // 'visualblocks', 'visualchars', 'toc', 'tabfocus',
         // 'quickbars', 'noneditable', 'legacyoutput', 'importcss',
         // 'imagetools', 'fullpage', 'contextmenu', 'colorpicker',
         // 'codesample', 'bbcode', 'autosave', 'autoresize',
@@ -48,15 +72,12 @@ return [
 
     'menubar' => 'file edit view insert format tools table',
 
-    'toolbar' => 'undo redo | styleselect | bold italic forecolor | link | visualblocks removeformat | alignleft aligncenter alignright | bullist numlist |  my_buttons my_variables ',
-
+    'toolbar' => ' undo redo | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | image | bullist numlist outdent indent | link | my_buttons my_variables ',
     'relative_urls' => false,
     'lfm_url' => 'filemanager',
     'use_lfm' => false,
     'use_dark' => true,
     'browser_spellcheck' => false,
-    'contextmenu' => true,
-
 
     'table_header_type' => 'sectionCells',
     'link_class_list' => [
@@ -83,8 +104,8 @@ return [
         ['title' => 'Default', 'value' => ''],
     ],
     'variable_mapper' => [
-        'account_id' => "Account ID",
-        'email' => "E-mail address"
+        'account_id' => 'Account ID',
+        'email' => 'E-mail address'
     ],
     'my_variables' => [],
     'my_buttons' => [
@@ -123,5 +144,4 @@ return [
         '#ffffff', 'White'
     ],
     'extra_options' => [],
-
 ];

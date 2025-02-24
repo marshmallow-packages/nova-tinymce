@@ -21,6 +21,7 @@ import "tinymce/models/dom";
 // import "tinymce/plugins/noneditable";
 // import "tinymce/plugins/paste";
 // import "tinymce/plugins/print";
+// import "tinymce/plugins/template";
 // import "tinymce/plugins/spellchecker";
 // import "tinymce/plugins/tabfocus";
 // import "tinymce/plugins/textcolor";
@@ -54,7 +55,7 @@ import "tinymce/plugins/quickbars";
 import "tinymce/plugins/save";
 import "tinymce/plugins/searchreplace";
 import "tinymce/plugins/table";
-import "tinymce/plugins/template";
+
 import "tinymce/plugins/visualblocks";
 import "tinymce/plugins/visualchars";
 import "tinymce/plugins/wordcount";

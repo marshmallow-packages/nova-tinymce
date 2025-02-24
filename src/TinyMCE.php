@@ -42,6 +42,7 @@ class TinyMCE extends Field
     protected function buildOptionsArray()
     {
         $options = [
+            'license_key' => config('nova-tinymce.license_key', 'gpl'),
             'content_css' => config('nova-tinymce.content_css'),
             'skin_url' => config('nova-tinymce.skin_url'),
             'content_css_dark' => config('nova-tinymce.content_css_dark'),
@@ -70,7 +71,7 @@ class TinyMCE extends Field
             'paste_as_text' => config('nova-tinymce.paste_as_text'),
             'removed_menuitems' => config('nova-tinymce.removed_menuitems'),
             'browser_spellcheck' => config('nova-tinymce.browser_spellcheck', false),
-            'contextmenu' => config('nova-tinymce.contextmenu', true),
+            'contextmenu' => config('nova-tinymce.contextmenu', false),
             'color_map' => config('nova-tinymce.color_map'),
             'promotion' => false,
         ];
