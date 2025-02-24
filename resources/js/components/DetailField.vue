@@ -7,16 +7,16 @@
 </template>
 
 <script>
-    export default {
-        props: ["resource", "resourceName", "resourceId", "field", "index"],
-    };
+export default {
+    props: ["resource", "resourceName", "resourceId", "field", "index"],
+};
 </script>
 
-<style lang="scss">
-    .markdown {
-        p {
-            font-size: inherit;
-            margin-bottom: 1rem;
-        }
+<style>
+.markdown {
+    p {
+        font-size: inherit;
+        margin-bottom: 1rem;
     }
+}
 </style>
