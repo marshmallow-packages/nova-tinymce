@@ -18,7 +18,7 @@ class TinyMCE extends Field
      */
     public $component = 'Nova-TinyMCE';
 
-    public function __construct(string $name, $attribute = null, callable $resolveCallback = null)
+    public function __construct(string $name, $attribute = null, ?callable $resolveCallback = null)
     {
         parent::__construct($name, $attribute, $resolveCallback);
 
@@ -80,8 +80,9 @@ class TinyMCE extends Field
             $options = array_merge($options, $extra_options);
         }
 
-        if (config('nova-tinymce.formats') && !empty(config('nova-tinymce.formats'))) {
-            $options['formats'] = config('nova-tinymce.formats');
+        $formats = config('nova-tinymce.formats');
+        if ($formats && !empty($formats)) {
+            $options['formats'] = $formats;
         }
 
         if ($custom_items = config('nova-tinymce.custom_items')) {
