@@ -29,6 +29,7 @@ return [
     |
     */
     'license_key' => 'gpl',
+    'cloud_api_key' => null, // Set your TinyMCE Cloud API key here, or leave null for self-hosted
     'height' => 350,
     'content_css' => '/vendor/tinymce/skins/ui/oxide/content.min.css, /vendor/tinymce/css/custom.css',
     'skin_url' => '/vendor/tinymce/skins/ui/oxide',
