@@ -7,7 +7,7 @@
     >
         <template #field>
             <editor
-                api-key="no-api-key"
+                :api-key="apiKey"
                 :id="tiny_field_id"
                 :key="tiny_field_id"
                 v-model="value"
@@ -63,6 +63,12 @@
         },
 
         computed: {
+            apiKey() {
+                const key = this.field.options?.cloud_api_key;
+
+                return key && key.trim() !== '' ? key : undefined;
+            },
+
             options() {
                 let options = this.field.options;
 
