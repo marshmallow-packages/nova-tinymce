@@ -28,10 +28,16 @@ class FieldServiceProvider extends ServiceProvider
             __DIR__ . '/../config/nova-tinymce.php' => config_path('nova-tinymce.php'),
         ], 'config');
 
+        // Asset names are served verbatim as /nova-api/scripts/<name> and matched
+        // case-sensitively, so a capitalised name breaks on any host that
+        // normalises urls to lowercase - the script 404s, the Vue component never
+        // registers, and every Nova form using this field dies on submit with
+        // "t.fill is not a function" (MM-25314). The Vue component names in
+        // resources/js are a separate contract and stay as they are.
         Nova::serving(function (ServingNova $event) {
-            Nova::script('Nova-TinyMCE-tinymce', __DIR__ . '/../dist/js/tinymce.js');
-            Nova::script('Nova-TinyMCE', __DIR__ . '/../dist/js/field.js');
-            Nova::style('Nova-TinyMCE', __DIR__ . '/../dist/css/field.css');
+            Nova::script('nova-tinymce-tinymce', __DIR__ . '/../dist/js/tinymce.js');
+            Nova::script('nova-tinymce', __DIR__ . '/../dist/js/field.js');
+            Nova::style('nova-tinymce', __DIR__ . '/../dist/css/field.css');
         });
 
         if ($this->app->runningInConsole()) {
